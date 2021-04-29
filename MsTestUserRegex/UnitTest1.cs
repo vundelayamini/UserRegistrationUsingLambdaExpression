@@ -8,6 +8,7 @@ namespace MsTestUserRegex
     {
         Pattern pattern = new Pattern();
 
+        //Happy Test Cases(Test Cases pass The Entry)
         /// <summary>
         /// UC1-Validate for the firstname
         /// </summary>
@@ -70,20 +71,54 @@ namespace MsTestUserRegex
             //Assert
             Assert.IsTrue(result);
         }
+
+        //Sad Test Cases(Test Cases Fail The Entry)
         [TestMethod]
-        [DataRow("abc@ygmail.com")]
-        [DataRow("abc-100@yahoo.com")]
-        [DataRow("abc.100@abcd.com")]
-        [DataRow("abc111@amit.com")]
-        [DataRow("abc-100@gmail.net")]
-        [DataRow("abc.100@abc.com.au")]
-        [DataRow("abc@1.com")]
-        [DataRow("abc@gmail.com.co")]
-        [DataRow("abc+100@gmail.com")]
-        public void ValidateEmailId_Should_return_true(string email)
+        public void Given_FistName_WhenValidate_ShouldReturnFalse()
         {
-            Assert.IsTrue(pattern.ValidateEmail(email));
+            string firstName = "yamini";
+            //Act
+            bool result = pattern.ValidateFirstName(firstName);
+            //Assert
+            Assert.IsFalse(result);
         }
+        [TestMethod]
+        public void Given_LastName_WhenValidate_ShouldReturnFalse()
+        {
+            string lastName = "mahi";
+            //Act
+            bool result = pattern.ValidateFirstName(lastName);
+            //Assert
+            Assert.IsFalse(result);
+        }
+        [TestMethod]
+        public void Given_EmailId_WhenValidate_ShouldReturnFalse()
+        {
+            string email = "yaminimahi.com";
+            //Act
+            bool result = pattern.ValidateEmail(email);
+            //Assert
+            Assert.IsFalse(result);
+        }
+        [TestMethod]
+        public void Given_MobileNumber_WhenValidate_ShouldReturnFalse()
+        {
+            string mobileNumber = "91 0901406620";
+            //Act
+            bool result = pattern.ValidateMobile(mobileNumber);
+            //Assert
+            Assert.IsFalse(result);
+        }
+        [TestMethod]
+        public void Given_Password_WhenValidate_ShouldReturnFalse()
+        {
+            string password = "yamini3@12";
+            //Act
+            bool result = pattern.ValidatePassword(password);
+            //Assert
+            Assert.IsFalse(result);
+        }
+       
 
     }
 
