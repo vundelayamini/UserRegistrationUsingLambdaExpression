@@ -118,7 +118,22 @@ namespace MsTestUserRegex
             //Assert
             Assert.IsFalse(result);
         }
-       
+        [TestMethod]
+        [DataRow("abc@yahoo.com")]
+        [DataRow("abc-100@yahoo.com")]
+        [DataRow("abc.100@yahoo.com")]
+        [DataRow("abc111@abc.com")]
+        [DataRow("abc-100@abc.net")]
+        [DataRow("abc.100@abc.com.au")]
+        [DataRow("abc@gmail.com.com")]
+        [DataRow("abc+100@gmail.com")]
+        public void ValidateEmailId_Should_return_true(string email)
+        {
+           
+            Assert.IsTrue(pattern.isValidEmail(email));
+
+        }
+      
 
     }
 
