@@ -74,7 +74,8 @@ namespace MsTestUserRegex
 
         //Sad Test Cases(Test Cases Fail The Entry)
         [TestMethod]
-        public void Given_FistName_WhenValidate_ShouldReturnFalse()
+        public void Given_FirstName_WhenValidate_Should_throw_Custom_InvalidFirstNameException()
+
         {
             string firstName = "yamini";
             //Act
@@ -83,7 +84,8 @@ namespace MsTestUserRegex
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void Given_LastName_WhenValidate_ShouldReturnFalse()
+        public void Given_LastName_WhenValidate_Should_throw_Custom_InvalidLastNameException()
+
         {
             string lastName = "mahi";
             //Act
@@ -92,7 +94,8 @@ namespace MsTestUserRegex
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void Given_EmailId_WhenValidate_ShouldReturnFalse()
+        public void Given_Email_WhenValidate_Should_throw_Custom_InvalidEmailException()
+
         {
             string email = "yaminimahi.com";
             //Act
@@ -101,7 +104,8 @@ namespace MsTestUserRegex
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void Given_MobileNumber_WhenValidate_ShouldReturnFalse()
+        public void Given_MobileNumber_WhenValidate_Should_throw_Custom_InvalidMobileException()
+
         {
             string mobileNumber = "91 0901406620";
             //Act
@@ -110,7 +114,7 @@ namespace MsTestUserRegex
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void Given_Password_WhenValidate_ShouldReturnFalse()
+        public void Given_Password_WhenValidate_Should_throw_Custom_InvalidPasswordException()
         {
             string password = "yamini3@12";
             //Act
@@ -118,6 +122,7 @@ namespace MsTestUserRegex
             //Assert
             Assert.IsFalse(result);
         }
+        //Sample Emails
         [TestMethod]
         [DataRow("abc@yahoo.com")]
         [DataRow("abc-100@yahoo.com")]
